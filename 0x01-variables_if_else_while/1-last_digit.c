@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 /**
  * main - prints the last digit of a randomly generated number
  * and whether it is greater than 5, less than 6, or 0.
@@ -10,23 +10,24 @@
 int main(void)
 {
 	int n;
-	int a;
 
 	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	a = n % 10;
+	n = rand();
+	int last_digit = n % 10;
 
-	if (a > 5)
+	printf("Last digit of %d is ", n);
+
+	if (last_digit > 5)
 	{
-		printf("Last digit of %d is greater than 5\n", n, a);
+		printf("%d is greater than 5\n", last_digit);
 	}
-	else if (a == 0)
+	else if (last_digit == 0)
 	{
-		printf("Last digit of %d is %d and is 0\n", n, a);
+		printf("0 and is 0\n");
 	}
-	else if (a < 6 && a != 0)
+	else
 	{
-		printf("Last digit of %d is %d and less than 6 and not 0\n", n, a);
+		printf("%d is %d and less than 6 and not 0\n", last_digit);
 	}
 	return (0);
 }
