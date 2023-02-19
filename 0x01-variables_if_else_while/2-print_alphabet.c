@@ -1,0 +1,16 @@
+#include <stdlib.h>
+/**
+ * main - prints alpha in lower case
+ * Return: Alway 0
+ */
+int main(void)
+{
+	char lc;
+
+	for (lc = 'a'; lc <= 'z'; lc++)
+	{
+		putchar(lc);
+	}
+	putchar('\n');
+	return (0);
+}
