@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * main - Entry point
- *
- * Return 0 (success)
+ * Discription: prints the alphabet in lowercase, followed by a new line
+ * Return: Always 0
  */
 
 int main(void)
