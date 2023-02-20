@@ -1,15 +1,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
+/**
+ * main - Entry point
+ * Description: get the last digits of a number
+ * Return: Always 0
+ */
 int main(void)
 {
 	int n;
+
 	srand(time(0));
 
 	n = rand();
 
 	int last_digit = n % 10;
+
 	printf("Last digit of %d is\n", n);
 
 	if (last_digit > 5)
