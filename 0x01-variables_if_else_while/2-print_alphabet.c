@@ -1,7 +1,8 @@
 #include <stdlib.h>
 /**
- * main - prints alpha in lower case
- * Return: Alway 0
+ * main - Entry point
+ * Description: 'Prints alpha in lower case'
+ * Return: Always 0
  */
 int main(void)
 {
