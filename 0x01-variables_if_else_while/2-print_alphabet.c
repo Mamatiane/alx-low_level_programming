@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * main - Entry point
  * Description: 'Prints alpha in lower case'
@@ -6,12 +7,11 @@
  */
 int main(void)
 {
-	int n = 97;
+	int i;
 
-	while (n <= 122)
+	for (i = 0; i < 26; i++)
 	{
-		putchar(n);
-		n++;
+		putchar(i + 'a');
 	}
 	putchar('\n');
 	return (0);
