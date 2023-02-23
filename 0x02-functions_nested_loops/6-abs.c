@@ -6,14 +6,14 @@
  * @c: input number as an integer.
  * Return: absolute value
  */
-int _abs(int r)
+int _abs(int c)
 {
-	if (r >= 0)
+	if (c >= 0)
 	{
-		return (r);
+		return (c);
 	}
 	else
 	{
-		return (r * -1);
+		return (c * -1);
 	}
 }
