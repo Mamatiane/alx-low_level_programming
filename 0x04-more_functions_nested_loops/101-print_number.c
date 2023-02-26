@@ -8,18 +8,29 @@
 
 void print_number(int n)
 {
-	unsigned int num = n;
-
 	if (n < 0)
 	{
-		n *= -1;
-		num = n;
 		_putchar('-');
+		n = -n;
 	}
-	num /= 10;
-	if (num != 0)
+	if (n / 10 != 0)
 	{
-		print_number(num);
+		print_number(n / 10);
 	}
-	_putchar((unsigned int) n % 10 + '0')
+	_putchar(n % 10 + '0')
+}
+
+/**
+ * main - entry point
+ * Return: Always 0
+ */
+
+int main(void)
+{
+	int n = 12345;
+
+	print_number(n);
+	putchar('\n');
+
+	return (0);
 }
