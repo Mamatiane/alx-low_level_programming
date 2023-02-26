@@ -9,19 +9,26 @@
 
 int main(void)
 {
-	long x, maxf;
+	long int num = 612852475143;
+	long int factor = 2;
+	long int largest = 0;
 
-	long number = 612852475143;
-
-	double square = sqrt(number);
-
-	for (x = 1; x <= square; x++)
+	while (num != 1)
 	{
-		if ((number % x) == 0)
+		if (num % factor == 0)
 		{
-			maxf = number / x;
+			num /= factor;
+			if (factor > largest)
+			{
+				largest = factor;
+			}
+		}
+		else
+		{
+			factor++;
 		}
 	}
-	printf("%d\n", maxf);
-	return (0);
+	printf("%ld\n", largest);
+
+	return 0;
 }
