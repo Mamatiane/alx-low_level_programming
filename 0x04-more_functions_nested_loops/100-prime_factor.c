@@ -9,23 +9,19 @@
 
 int main(void)
 {
-	long prime = 612852475143, div;
+	long x, maxf;
 
-	while (div < (prime / 2))
+	long number = 612852475143;
+
+	double square = sqrt(number);
+
+	for (x = 1; x <= square; x++)
 	{
-		if ((prime % 2) == 0)
+		if ((number % x) == 0)
 		{
-			prime /= 2;
-			continue;
-		}
-		for (div = 3; div < (prime / 2); div += 2)
-		{
-			if ((prime % div) == 0)
-			{
-				prime /= div;
-			}
+			maxf = number / x;
 		}
 	}
-	printf("%d\n", prime);
+	printf("%d\n", maxf);
 	return (0);
 }
