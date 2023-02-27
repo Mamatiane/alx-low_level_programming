@@ -6,31 +6,35 @@
  */
 int _atoi(char *s)
 {
-	int i = 0;
-	int n = 0;
-	int digit = 1;
+	int sign = 1;
+	int num = 0;
+	int digit;
 
-	while ((s[i] < '0' || s[i] > '9') && s[i] != 0)
+	while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
 	{
-		if (s[i] == '-')
-		{
-			digit *= -1;
-			i++;
-		}
+		s++;
 	}
-	while ((s[i] >= '0' && s[i] <= '9') && s[i] != 0)
+	if (*s == '-')
 	{
-		if (n >= 0)
-		{
-			n = n * 10 - (s[i] - '0');
-			i++;
-		}
-		else
-		{
-			n = n * 10 - (s[i] - '0');
-			i++;
-		}
+		sign = -1;
+		s++;
 	}
-	digit *= -1;
-	return (n);
+	else if (*s == '+')
+	{
+		s++;
+	}
+	while (*s >= '0' && *s <= '9')
+	{
+		digit = *s - '0';
+		if (num > INT_MAX / 10 || (num == INT_MAX / 10 && digit > INT_MAX % 10))
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			else
+				return (INT_MIN);
+		}
+		num = num * 10 + digit;
+		s++;
+	}
+	return (sign * num);
 }
