@@ -6,18 +6,18 @@
  */
 int main(void)
 {
-	unsigned long int prev = 1, curr = 2, next;
+	unsigned long int a = 1, b = 2, next;
 	int i;
 
-	printf("%lu, %lu, ", prev, curr);
-	for (i = 3; i <= 98; i++)
+	printf("%lu, %lu, ", a, b);
+	for (i = 2; i < 98; i++)
 	{
-		next = prev + curr;
+		next = a + b;
 		printf("%lu", next);
-		if (i < 98)
+		if (i != 97)
 			printf(", ");
-		prev = curr;
-		curr = next;
+		a = b;
+		b = next;
 	}
 	printf("\n");
 	return (0);
