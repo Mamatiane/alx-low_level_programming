@@ -5,32 +5,23 @@
  * @n: integer
  * Return: Always 0
  */
-
 void print_number(int n)
 {
+	int divisor = 1;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	if (n / 10 != 0)
+	while (n / divisor > 9)
 	{
-		print_number(n / 10);
+		divisor *= 10;
 	}
-	_putchar(n % 10 + '0')
-}
-
-/**
- * main - entry point
- * Return: Always 0
- */
-
-int main(void)
-{
-	int n = 12345;
-
-	print_number(n);
-	putchar('\n');
-
-	return (0);
+	while (divisor != 0)
+	{
+		_putchar((n / divisor) + '0');
+		n %= divisor;
+		divisor /= 10;
+	}
 }
