@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include "holberton.h"
 
 /**
  * create_array - create array of size size and assign char c
