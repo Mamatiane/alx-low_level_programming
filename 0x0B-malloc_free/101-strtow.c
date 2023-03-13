@@ -49,7 +49,6 @@ char **strtow(char *str)
 		{
 			if (c)
 			{
-				end = i;
 				tmp = malloc(sizeof(char) * (c + 1));
 				if (tmp == NULL)
 					return (NULL);
