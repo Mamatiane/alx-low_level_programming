@@ -4,35 +4,33 @@
  * argstostr - main entry
  * @ac: int input
  * @av: double pointer array
- * Return: 0
+ * Return: pointer to concatenated string, or NULL on failure
  */
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, l = 0;
+	int i, j, len = 0, pos = 0;
 	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		for (n = 0; av[i][n]; n++)
-			i++;
+		for (j = 0; av[i][j] != '\0'; j++)
+			len++;
 	}
-	l += ac;
-	str = malloc(sizeof(char) * l + 1);
+	str = malloc(len + ac + 1);
 	if (str == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		for (n = 0; av[i][n]; n++)
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			str[r] = av[i][n];
-			r++;
+			str[pos] = av[i][j];
+			pos++;
 		}
-		if (str[r] == '\0')
-		{
-			str[r++] = '\n';
-		}
+		str[pos] = '\n';
+		pos++;
 	}
+	str[pos] = '\0';
 	return (str);
 }
